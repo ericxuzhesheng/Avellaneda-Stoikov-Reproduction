@@ -1,0 +1,20 @@
+{
+  "inventory": {
+    "variant": "inventory",
+    "final_pnl": -5.376299000000188,
+    "equity_std": 1.5810919749051544,
+    "position_std": 1.2888140543409148,
+    "position_absmax": 3.0,
+    "n_trades": 240,
+    "source": "real hummingbot paper-trade fill log"
+  },
+  "symmetric": {
+    "variant": "symmetric",
+    "final_pnl": -13.466298999999594,
+    "equity_std": 4.582363140882212,
+    "position_std": 4.349257599483694,
+    "position_absmax": 16.0,
+    "n_trades": 240,
+    "source": "real hummingbot paper-trade fill log"
+  }
+}

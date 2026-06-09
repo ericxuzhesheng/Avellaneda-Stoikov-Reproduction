@@ -1,0 +1,21 @@
+# Core reproduction (Track 0) + figures
+numpy>=2.0
+pandas>=2.0
+matplotlib>=3.8
+numba>=0.60
+scipy>=1.11
+
+# Track A: real limit-order-book backtesting engine.
+#   - make_feed.py        : synthetic A-S feed (offline, default)
+#   - download_data.py    : REAL Binance USD-M data -> hftbacktest feed (pandas)
+#   - run_real_windows.py : aggregate the A-S rule over several real windows
+hftbacktest>=2.4
+
+# Track B: Hummingbot is a heavy Docker runtime and is NOT installed here.
+#   - as_market_making.py        : drop-in ScriptStrategyBase for a real install
+#   - docker-compose.yml + RUNBOOK.md : turnkey real paper-trade run (needs Docker)
+#   - parse_hummingbot_logs.py   : real fill logs -> metrics (validated on sample)
+#   - run_hummingbot_sim.py      : offline cadence reproduction (no install needed)
+# Real runtime requires Docker Desktop; see track_b_hummingbot/RUNBOOK.md.
+
+# Report: TeX Live / MiKTeX with XeLaTeX + ctex (system install, not pip).

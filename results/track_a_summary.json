@@ -1,0 +1,18 @@
+{
+  "inventory": {
+    "variant": "inventory",
+    "final_pnl": 3.4247067999990803,
+    "equity_std": 1.5846462420232286,
+    "position_std": 2.137023488091586,
+    "position_absmax": 7.0,
+    "n_trades": 1008
+  },
+  "symmetric": {
+    "variant": "symmetric",
+    "final_pnl": 23.37667879999973,
+    "equity_std": 9.409140901901905,
+    "position_std": 10.706009609144012,
+    "position_absmax": 25.0,
+    "n_trades": 1044
+  }
+}

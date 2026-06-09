@@ -1,0 +1,14 @@
+{
+  "symbol": "SOLUSDT",
+  "date": "2024-03-06",
+  "start_hour": 0.0,
+  "end_hour": 1.0,
+  "n_events": 967683,
+  "n_bbo_rows": 702957,
+  "n_depth_events": 876719,
+  "n_trades": 90964,
+  "tick_size": 0.001,
+  "price_min": 123.435,
+  "price_max": 126.923,
+  "source": "binance USD-M public archive (bookTicker + aggTrades, BBO-only)"
+}

@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+.conda/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Large binary data files (Binance L2 feeds, timeseries archives)
+*.npz
+# Keep feed_synth.npz as it is small and needed for Track A synthetic demo
+!track_a_hftbacktest/feed_synth.npz
+
+# SQLite databases (contain Hummingbot paper-trade fills — keep samples only)
+track_b_hummingbot/hb-files/data/*.sqlite
+
+# Hummingbot sensitive config / secrets
+track_b_hummingbot/hb-files/conf/.password_verification
+track_b_hummingbot/hb-files/conf/conf_client.yml
+track_b_hummingbot/hb-files/conf/connectors/
+track_b_hummingbot/hb-files/logs/
+track_b_hummingbot/hb-files/certs/
+
+# LaTeX build artifacts
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz
+report/*.synctex(busy)
+report/*.bbl
+report/*.blg
+report/_minted*/
+
+# Keep the compiled PDF
+!report/report.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables / secrets
+.env
+*.pem
+*.key

@@ -1,0 +1,11 @@
+script_file_name: as_market_making.py
+controllers_config: []
+exchange: binance_paper_trade
+trading_pair: ETH-USDT
+order_amount: 0.02
+order_refresh_time: 15
+gamma: 0.1
+kappa: 50.0
+horizon: 30.0
+vol_window: 30
+inventory_skew: false

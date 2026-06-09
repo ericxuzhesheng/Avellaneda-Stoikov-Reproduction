@@ -1,0 +1,44 @@
+{
+  "0.1": {
+    "inventory": {
+      "profit_mean": 64.27865040882466,
+      "profit_std": 5.971931178887786,
+      "final_q_mean": -0.1,
+      "final_q_std": 2.934961669255665
+    },
+    "symmetric": {
+      "profit_mean": 68.91059291023215,
+      "profit_std": 13.545300136064007,
+      "final_q_mean": -0.226,
+      "final_q_std": 8.60911865407836
+    }
+  },
+  "0.01": {
+    "inventory": {
+      "profit_mean": 68.07392908735311,
+      "profit_std": 8.833192498883406,
+      "final_q_mean": -0.067,
+      "final_q_std": 5.006846412663364
+    },
+    "symmetric": {
+      "profit_mean": 68.59781441424389,
+      "profit_std": 14.14905753374097,
+      "final_q_mean": 0.022,
+      "final_q_std": 8.472279268296106
+    }
+  },
+  "0.5": {
+    "inventory": {
+      "profit_mean": 23.90113741516295,
+      "profit_std": 5.248828471212843,
+      "final_q_mean": 0.031,
+      "final_q_std": 1.9401131410306978
+    },
+    "symmetric": {
+      "profit_mean": 67.29339902088435,
+      "profit_std": 14.670375530970212,
+      "final_q_mean": 0.654,
+      "final_q_std": 8.915059394081455
+    }
+  }
+}

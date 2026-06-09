@@ -1,0 +1,84 @@
+{
+  "inventory": {
+    "n_windows": 4,
+    "pnl_mean": -31.703961419999445,
+    "pnl_std": 12.825241521032298,
+    "position_std": 1.8789918449482128,
+    "equity_std": 9.032897636944329,
+    "windows": [
+      {
+        "variant": "inventory",
+        "final_pnl": -20.89582491999961,
+        "equity_std": 6.315364735641201,
+        "position_std": 1.6906926230754642,
+        "position_absmax": 7.0,
+        "n_trades": 2403
+      },
+      {
+        "variant": "inventory",
+        "final_pnl": -52.290768579998755,
+        "equity_std": 14.192650345454773,
+        "position_std": 2.1212329368961353,
+        "position_absmax": 9.0,
+        "n_trades": 5937
+      },
+      {
+        "variant": "inventory",
+        "final_pnl": -32.70969337999941,
+        "equity_std": 10.027031271201592,
+        "position_std": 1.8673450308634627,
+        "position_absmax": 10.0,
+        "n_trades": 4008
+      },
+      {
+        "variant": "inventory",
+        "final_pnl": -20.91955880000001,
+        "equity_std": 5.596544195479753,
+        "position_std": 1.8366967889577894,
+        "position_absmax": 19.0,
+        "n_trades": 1574
+      }
+    ]
+  },
+  "symmetric": {
+    "n_windows": 4,
+    "pnl_mean": -12.06255440999321,
+    "pnl_std": 55.75674266385831,
+    "position_std": 17.515311126006825,
+    "equity_std": 21.445789712229935,
+    "windows": [
+      {
+        "variant": "symmetric",
+        "final_pnl": 28.121069680002815,
+        "equity_std": 8.343475116618377,
+        "position_std": 8.123760411766021,
+        "position_absmax": 31.0,
+        "n_trades": 2386
+      },
+      {
+        "variant": "symmetric",
+        "final_pnl": 48.83718664000358,
+        "equity_std": 20.97302390201058,
+        "position_std": 17.102851166611313,
+        "position_absmax": 41.0,
+        "n_trades": 5981
+      },
+      {
+        "variant": "symmetric",
+        "final_pnl": -94.24939420000942,
+        "equity_std": 40.74584483817752,
+        "position_std": 23.02586654778703,
+        "position_absmax": 60.0,
+        "n_trades": 3939
+      },
+      {
+        "variant": "symmetric",
+        "final_pnl": -30.959079759969818,
+        "equity_std": 15.720814992113258,
+        "position_std": 21.80876637786294,
+        "position_absmax": 61.0,
+        "n_trades": 1444
+      }
+    ]
+  }
+}

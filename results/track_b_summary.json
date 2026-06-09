@@ -1,0 +1,20 @@
+{
+  "config": {
+    "gamma": 0.1,
+    "dt": 0.005,
+    "requote_every": 5,
+    "cadence": "stale quotes refreshed every 5 ticks (Hummingbot order_refresh_time)"
+  },
+  "inventory": {
+    "final_pnl": 50.217276540248946,
+    "pnl_std": 8.193439773911162,
+    "position_std": 3.1249799999359995,
+    "position_mean": -0.15
+  },
+  "symmetric": {
+    "final_pnl": 64.76529432252894,
+    "pnl_std": 14.645772280930785,
+    "position_std": 9.689705877889175,
+    "position_mean": -0.14
+  }
+}

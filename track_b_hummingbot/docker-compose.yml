@@ -1,0 +1,34 @@
+# Turnkey Hummingbot runtime for the Track B Avellaneda-Stoikov paper-trade run.
+#
+#   docker compose run --rm hummingbot
+#
+# The bundled A-S strategy (as_market_making.py) is mounted read-only into the
+# container's scripts/ directory, so no copy step is needed. All Hummingbot state
+# (config, logs, fill database) is persisted to ./hb-files on the host so the
+# parser (parse_hummingbot_logs.py) can read the fills after the run.
+#
+# See RUNBOOK.md for the full step-by-step.
+
+services:
+  hummingbot:
+    image: hummingbot/hummingbot:latest
+    container_name: hummingbot-as
+    # Hummingbot is an interactive TUI: keep STDIN open and allocate a TTY.
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./hb-files/conf:/home/hummingbot/conf
+      - ./hb-files/conf/connectors:/home/hummingbot/conf/connectors
+      - ./hb-files/conf/strategies:/home/hummingbot/conf/strategies
+      - ./hb-files/logs:/home/hummingbot/logs
+      - ./hb-files/data:/home/hummingbot/data
+      - ./hb-files/certs:/home/hummingbot/certs
+      # mount our A-S strategy straight into the scripts directory (read-only)
+      - ./as_market_making.py:/home/hummingbot/scripts/as_market_making.py:ro
+    environment:
+      - CONFIG_PASSWORD=${HB_PASSWORD:-}
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
