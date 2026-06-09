@@ -1,3 +1,6 @@
+# Copyrighted reference papers — not for public redistribution
+reference/
+
 # Python
 __pycache__/
 *.py[cod]
