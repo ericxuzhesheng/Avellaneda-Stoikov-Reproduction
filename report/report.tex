@@ -14,7 +14,7 @@
 \graphicspath{{../figures/}}
 \hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue,
   pdftitle={Avellaneda-Stoikov 做市策略复现},
-  pdfauthor={ETF 高频套利研究}}
+  pdfauthor={许哲圣}}
 
 % ---- 图表标题样式 ----
 \captionsetup{font=small,labelfont=bf,labelsep=quad}
@@ -59,7 +59,9 @@
 
 {\large 三轨道复现：理论蒙特卡洛 $\cdot$ 真实撮合引擎 $\cdot$ 做市机器人模型\par}
 \vspace{1.0cm}
-{\large 2026 年 6 月\par}
+{\Large 许哲圣\par}
+\vspace{0.4cm}
+{\large 2026 年 6 月 12 日\par}
 \end{titlepage}
 
 % =========================== 摘要 ===========================
@@ -98,6 +100,20 @@ Avellaneda \& Stoikov (2008) 给出了这一问题在随机最优控制框架下
 电子做市与高频做市系统的理论基石。本报告的目标有三：(i) 严格复现论文的理论结果与数值实验；
 (ii) 将该策略迁移到\textbf{工业级高频回测引擎}与\textbf{开源做市机器人}两类真实工程框架中，检验其
 结论的稳健性；(iii) 诚实评估每一类框架的适用边界与定量偏离来源。
+
+\paragraph{本文主要工作。}\begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
+\item \textbf{忠实的理论复现}：逐式实现论文 §3.3 蒙特卡洛，复刻表~1--3 与图~1--4，
+$\gamma=0.1/0.01$ 下各项统计量与原文高度一致；并辨析出原文仿真实际采用\textbf{常数价差}这一
+未明言的实现口径（见第~\ref{sec:model} 节）。
+\item \textbf{hftbacktest 真实数据回测}：自行编写 Binance 公共归档下载与 64 字节事件流转换管线，
+在 4 个真实交易日窗口（SOLUSDT）上以真实订单/延迟/队列撮合验证结论，库存标准差较对称基准低
+$9.3$ 倍。
+\item \textbf{Hummingbot 真实部署}：将策略移植到 Hummingbot v2 \texttt{StrategyV2Base} API，
+在本地 Docker 中实际跑通 \texttt{binance\_paper\_trade} 纸面交易（ETH-USDT 实时行情），
+从 \texttt{TradeFill} 成交日志重建库存/权益序列并复现库存控制效应。
+\item \textbf{跨轨道一致性与诚实边界}：三轨道相互印证核心结论，并逐条标注各框架相对论文理想
+仿真的偏离来源与适用边界（第~\ref{sec:limit} 节）。
+\end{enumerate}
 
 \paragraph{为何选择该论文。}\texttt{hftbacktest} 与 \texttt{Hummingbot} 均是\textbf{围绕做市/限价
 单簿}设计的工具：前者的旗舰示例即 GLFT/Avellaneda--Stoikov 做市，后者内置
@@ -202,7 +218,7 @@ r(s,q,t)=s-q\,\gamma\,\sigma^2\,(T-t),
 
 \subsection{接入真实 Binance 行情}
 \label{sec:trackA_real}
-为消除"行情不真实"这一局限，本文进一步用\textbf{真实 Binance USDⓈ-M 永续合约行情}驱动同一引擎
+为消除"行情不真实"这一局限，本文进一步用\textbf{真实 Binance USDT 本位永续合约行情}驱动同一引擎
 （\texttt{download\_data.py}）：从 Binance 公共归档下载 \texttt{bookTicker}（最优买卖价）与
 \texttt{aggTrades}（逐笔成交），向量化解析后转为 hftbacktest 的 64 字节事件流。两处工程要点：
 (i) 真实价格位于交易所最小变动价位网格上，本文\textbf{从数据自动反推 tick size}（如 SOLUSDT 为
